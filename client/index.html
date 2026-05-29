@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnnoncesApp - Petites annonces locales</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo" id="btn-home">📢 AnnoncesApp</div>
+    <nav id="nav-menu">
+      </nav>
+  </header>
+
+  <main class="container">
+    
+    <section id="view-home">
+      <div class="hero-banner">
+        <h1>Trouvez la bonne affaire près de chez vous</h1>
+        <p>Des milliers de petites annonces lues et vérifiées au quotidien.</p>
+        
+        <div class="search-bar">
+          <input type="text" id="search-q" placeholder="Que recherchez-vous ? (ex: iPhone, Peugeot, VTT...)">
+          <select id="search-category">
+            <option value="">Toutes les catégories</option>
+          </select>
+          <input type="text" id="search-city" placeholder="Ville (ex: Lyon, Paris...)">
+          <input type="number" id="search-price-max" placeholder="Prix max (€)">
+          <button class="btn" id="btn-search">Rechercher</button>
+        </div>
+      </div>
+
+      <div class="categories-shelf">
+        <h3>Naviguer par catégorie</h3>
+        <div class="categories-grid" id="categories-quick-links"></div>
+      </div>
+
+      <div class="main-content-layout">
+        <div class="section-header">
+          <h2>🔥 Annonces récentes</h2>
+          <button class="btn secondary" id="btn-reset-filters">Effacer les filtres</button>
+        </div>
+        <div class="grid" id="ads-container">
+          <p style="text-align: center; grid-column: 1/-1; color: #64748b; padding: 40px;">Chargement des annonces en cours...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-auth" class="hidden">
+      <div class="auth-box">
+        <h2 id="auth-title">Connexion</h2>
+        <form id="auth-form">
+          <div class="form-group id-register-only hidden">
+            <label>Nom d'utilisateur</label>
+            <input type="text" id="auth-username" placeholder="Ex: JeanDupont">
+          </div>
+          <div class="form-group">
+            <label>Adresse Email</label>
+            <input type="email" id="auth-email" required placeholder="admin@annonces.fr">
+          </div>
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" id="auth-password" required placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn" style="width:100%; justify-content: center;" id="auth-submit-btn">Se connecter</button>
+        </form>
+        <p style="text-align:center; margin-top:15px;">
+          <a href="#" id="auth-toggle">Pas de compte ? S'inscrire</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="view-create-ad" class="hidden">
+      <div class="panel-box">
+        <h2>Déposer une petite annonce</h2>
+        <form id="form-create-ad">
+          <div class="form-group">
+            <label>Titre de l'annonce</label>
+            <input type="text" id="ad-title" required>
+          </div>
+          <div class="form-group">
+            <label>Catégorie</label>
+            <select id="ad-category" required></select>
+          </div>
+          <div class="form-group">
+            <label>Prix (€)</label>
+            <input type="number" id="ad-price" required>
+          </div>
+          <div class="form-group">
+            <label>Localisation (Ville)</label>
+            <input type="text" id="ad-city" required>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="ad-description" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>URL d'image (Optionnel)</label>
+            <input type="url" id="ad-image" placeholder="https://images.unsplash.com/...">
+          </div>
+          <button type="submit" class="btn" style="width:100%">Publier l'annonce</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="view-messages" class="hidden">
+      <h2>Vos discussions privées</h2>
+      <div class="chat-container">
+        <div class="chat-sidebar" id="chat-list"></div>
+        <div class="chat-main">
+          <div class="chat-messages" id="chat-body">
+            <p style="text-align:center; color:#64748b; margin-top:100px;">Sélectionnez une discussion.</p>
+          </div>
+          <form class="chat-input hidden" id="chat-form">
+            <input type="text" id="chat-msg-input" placeholder="Votre message..." style="flex:1;" required>
+            <button type="submit" class="btn">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-dashboard" class="hidden">
+      <h2>Espace de Gestion & Modération</h2>
+      <div id="admin-reports-section">
+        <h3>Signalements en attente</h3>
+        <div class="grid" id="reports-container"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
