@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/api";
+const API_URL = "/api";
 let currentUser = JSON.parse(localStorage.getItem("user")) || null;
 let token = localStorage.getItem("token") || null;
 
